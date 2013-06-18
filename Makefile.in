@@ -1223,7 +1223,7 @@ unlzma = @unlzma@
 unxz = @unxz@
 vgrind = @vgrind@
 xz = @xz@
-SUBDIRS = docs gnulib/lib gnulib/po lib libdb src man manual po tools
+SUBDIRS = docs gnulib/lib lib libdb src man manual po tools
 dist_noinst_DATA = FAQ NEWS README include/README
 
 # These macro files are imported by gnulib-tool, but at present not used. We

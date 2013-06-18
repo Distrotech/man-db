@@ -410,7 +410,7 @@ AC_CHECK_HEADERS([fcntl.h sys/file.h])
 
 # Internationalization support.
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.18.1])
+AM_GNU_GETTEXT_VERSION([0.18.2])
 AC_SUBST([LINGUAS])
 AM_ICONV
 MAN_PO4A
