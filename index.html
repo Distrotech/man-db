@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Man-db by Distrotech</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Man-db</h1>
+          <h2>Mirror of bzr://bzr.savannah.nongnu.org/man-db</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Distrotech/man-db/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Distrotech/man-db/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Distrotech/man-db" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="readme-for-the-man-db-manual-pager-suite" class="anchor" href="#readme-for-the-man-db-manual-pager-suite"><span class="octicon octicon-link"></span></a>README for the man-db manual pager suite</h1>
+
+<p>Please read the man-db manual, included in the manual subdirectory of this
+distribution.  It contains configuration details and other aspects of this
+manual pager suite that are not duplicated or relevant in this README.
+Check manual/README for details of the formatters required.</p>
+
+<p>Read docs/INSTALL.autoconf for generic options to configure.
+Read docs/INSTALL.quick if you know all about man-db.
+Read NEWS for visible changes since the last public release.
+Read ChangeLog for details of recent source code changes.
+Read docs/TODO for future plans.</p>
+
+<p>The C source requires an ANSI C compiler.</p>
+
+<h1>
+<a name="copyright-and-licensing" class="anchor" href="#copyright-and-licensing"><span class="octicon octicon-link"></span></a>Copyright and licensing</h1>
+
+<p>Copyright (C) 1990, 1991 John W. Eaton.
+Copyright (C) 1994, 1995 Markus Armbruster.
+Copyright (C) 1994, 1995 Graeme W. Wilford. (Wilf.)
+Copyright (C) 1995 Carl Edman.
+Copyright (C) 1996, 1997, 1998, 2000 Fabrizio Polacco.
+Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+              2011, 2012 Colin Watson.
+Copyright (C) 1984, 1989, 1990, 1991, 1992, 1995, 1996, 1997, 1998, 1999,
+              2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
+              2010, 2011, 2012 Free Software Foundation, Inc.</p>
+
+<p>man-db is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</p>
+
+<p>man-db is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License
+along with man-db; if not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</p>
+
+<p>In addition, man-db incorporates Gnulib, copyrighted by the Free Software
+Foundation and others. Note that much of Gnulib is distributed under the GNU
+General Public License version 3 or later. This means that, although
+man-db's own source code is licensed under GPL v2 or later, the work as a
+whole falls under the terms of the GPL v3 or later. Unless you take special
+pains to remove the GPL v3 portions, you must therefore follow the terms and
+conditions of the GPL v3 or later when distributing man-db.</p>
+
+<h1>
+<a name="notice-regarding-current-state-of-fhs-linuxbsd" class="anchor" href="#notice-regarding-current-state-of-fhs-linuxbsd"><span class="octicon octicon-link"></span></a>Notice regarding current state of FHS (Linux/?BSD)</h1>
+
+<p>As of May 13th, 2001, the last public release of the Filesystem Hierarchy
+Standard proposed the root of the manual page hierarchy as <code>/usr/share' and
+the root of the writable cat hierarchy as</code>/var/cache/man' for the purposes
+of man-&gt;cat filename translation.  As such, the following are defined in
+./include/manconfig.h.in:</p>
+
+<h1>
+<a name="define-fhs_cat_root----varcacheman---------required-by-fsstnd-" class="anchor" href="#define-fhs_cat_root----varcacheman---------required-by-fsstnd-"><span class="octicon octicon-link"></span></a>define FHS_CAT_ROOT    "/var/cache/man"        /* required by fsstnd() */</h1>
+
+<h1>
+<a name="define-fhs_man_root----usrshare-------------required-by-fsstnd-" class="anchor" href="#define-fhs_man_root----usrshare-------------required-by-fsstnd-"><span class="octicon octicon-link"></span></a>define FHS_MAN_ROOT    "/usr/share"            /* required by fsstnd() */</h1>
+
+<p>For compatibility with the old FSSTND, the following locations are also
+defined:</p>
+
+<h1>
+<a name="define-cat_root--------varcatman------------required-by-fsstnd-" class="anchor" href="#define-cat_root--------varcatman------------required-by-fsstnd-"><span class="octicon octicon-link"></span></a>define CAT_ROOT        "/var/catman"           /* required by fsstnd() */</h1>
+
+<h1>
+<a name="define-man_root--------usr-------------------required-by-fsstnd-" class="anchor" href="#define-man_root--------usr-------------------required-by-fsstnd-"><span class="octicon octicon-link"></span></a>define MAN_ROOT        "/usr"                  /* required by fsstnd() */</h1>
+
+<p>Should these locations change, simply define the paths accordingly and
+recompile.  Other FHS changes relating to man/cat paths will not be
+compatible with this version of man-db.</p>
+
+<h1>
+<a name="non-generic-arguments-to-configure" class="anchor" href="#non-generic-arguments-to-configure"><span class="octicon octicon-link"></span></a>Non-generic arguments to configure</h1>
+
+<p>To allow the configuration program, configure, to be non-interactive, it can
+be passed various options to alter the default settings.  Generic configure
+options are discussed in docs/INSTALL.autoconf.  The following list of
+options is extracted from the man-db manual.  It is strongly recommended
+that relevant sections of the manual are read if any of these options are
+used.</p>
+
+<p>--enable-setuid[=ARG]
+     By default, man will be installed as a setuid program to user man.  Use
+     this option with an argument to change the setuid owner.</p>
+
+<p>--disable-setuid
+     Use this option to install man as a non-setuid program and to change the
+     default cat and database files' access flags to allow users to modify
+     them.</p>
+
+<p>--enable-mandirs=OS
+     By default, man-db supports manual page directories in any of several
+     layouts used by free and proprietary versions of UNIX.  However, in
+     certain cases, this can cause man-db to find the wrong page by mistake,
+     especially when the names of some manual pages on the system contain
+     periods.  Use this option with an argument of GNU, HPUX, IRIX, Solaris,
+     or BSD (or more than one of these, separated by commas) to support only
+     the layouts typically used on each of those systems.  Note that man-db is
+     not currently capable of writing cat pages in the proper BSD layout.</p>
+
+<p>--with-device=DEVICE
+     Use this flag to alter the default output device used by NROFF. DEVICE is
+     passed to NROFF with the -T option.  configure will test that NROFF will
+     run with the supplied device argument.</p>
+
+<p>--with-db=LIBRARY
+     configure will look for database interface libraries in the order gdbm,
+     Berkeley DB and finally ndbm and will #define appropriate variables
+     relative to the first one found.  To override the built-in order on
+     platforms having a choice of interface library, use this option to
+     specify which library to use.</p>
+
+<p>--enable-automatic-create
+     If this flag is used, man will automatically create index databases for
+     users' private manual page hierarchies.</p>
+
+<p>--disable-automatic-update
+     Normally, man will update entries in index databases if it finds newly
+     installed manual pages (if the --update flag is used) or delete entries
+     if manual pages are removed.  This flag suppresses this behaviour.</p>
+
+<p>--disable-cats
+     Normally, man will automatically try to create cat files corresponding to
+     manual files when a manual page is read.  This flag suppresses this
+     behaviour.</p>
+
+<h1>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>INSTALL</h1>
+
+<p>Running configure.</p>
+
+<pre><code>o READ `docs/INSTALL.autoconf' regarding ./configure options
+
+o RUN `./configure --help' to see what --enable and --with
+  options may be useful.
+
+o RUN `./configure' with the appropriate options and environment
+  variable settings
+</code></pre>
+
+<p>BROWSE or EDIT the following files that were created by the configuration
+process.</p>
+
+<pre><code>o `include/manconfig.h' regarding paths to support programs,
+  the default section list and other specific definitions.
+
+o `include/comp_src.h' if the default compressor support is
+  inadequate for your requirements.  (usually .Z [compress], 
+  .z, .gz [gzip])
+</code></pre>
+
+<p>configure will determine your system's ability to use native language
+support (NLS) message catalogues.  You may set the environment variable
+LINGUAS to limit the set of translations installed.  LINGUAS should contain
+a space-separated list of two-letter language identifiers.  To compile
+man-db with no support for message catalogues, simply pass the --disable-nls
+option to configure.  N.B. This is not related to man's ability to display
+NLS manual pages, support for which is compiled in by default. </p>
+
+<p>Running make.</p>
+
+<pre><code>o RUN `make' to compile man-db with the set of translations chosen
+  when running `./configure'.
+</code></pre>
+
+<p>Sort out the man-db configuration file.</p>
+
+<pre><code>o RUN `./src/man -l man/man5/manpath.5' from the root of this
+  distribution to read the man-db configuration file details.
+
+o EDIT `./src/man_db.conf' to your local requirements.
+</code></pre>
+
+<p>Install the package.</p>
+
+<pre><code>o (gain superuser privileges for the rest of the steps)
+
+o RUN `make install' to install the utilities and manual pages.
+</code></pre>
+
+<p>Initialise the `index' databases for all manpaths marked as global in the
+man-db configuration file.</p>
+
+<pre><code>o RUN `mandb' (This step is equivalent to running straycats and 
+  makewhatis too).
+</code></pre>
+
+<p>The following steps are optional / dependent on local conventions.</p>
+
+<pre><code>o ACKNOWLEDGE any warnings emitted by mandb. Bogus manual pages
+  are not included in the database and may be a waste of space.
+  Those pages without correctly formatted `whatis' lines are
+  included, but will have a whatis entry of "(unknown)"
+
+o CD tools and RUN `mkcatdirs -t' to see if you have all of the
+  required cat directories.  `mkcatdirs' without an option will 
+  display a usage message.
+
+o CD tools and RUN `checkman' with an argument of colon separated
+  manual page hierarchies to cross check for duplicated manual
+  pages.  If no argument is given, your default $MANPATH will be
+  used.
+
+  The output of checkman may be piped into a file and used as an
+  argument to `rm', the `is newer than' messages are directed to 
+  standard error.  e.g. `checkman &gt; dups'
+
+  If you are confident that the duplicates found are indeed 
+  duplicates, you can back them up and delete them to save space.
+
+  At this point, running checkman again may yield further duplicates 
+  that were ignored the first time.
+
+o RUN `catman' with appropriate options to create any/all cat files
+  that you would like pre-formatted.
+</code></pre>
+
+<h1>
+<a name="multiple-build-directories" class="anchor" href="#multiple-build-directories"><span class="octicon octicon-link"></span></a>Multiple build directories</h1>
+
+<p>It is possible to build man-db in a directory other than the directory
+containing this file (and all of the program sources).  This is particularly
+useful if compiling on multiple architectures or testing various
+configuration options as only a single copy of the sources is required.</p>
+
+<p>To enable this support, simply change directory to where you would like to
+build the package and run the configure program in this directory 
+<em>from there</em>.  Further information about this support can be found in the 
+generic install document `docs/INSTALL.autoconf'.</p>
+
+<h1>
+<a name="makefile-targets-and-variables" class="anchor" href="#makefile-targets-and-variables"><span class="octicon octicon-link"></span></a>Makefile targets and variables</h1>
+
+<p>The standard GNU Makefile targets: all, install, uninstall, mostlyclean,
+clean, distclean, realclean and TAGS are available in every Makefile-
+supported directory.  In addition, the master Makefile has the dist target
+to create a compressed and tarred distribution file.</p>
+
+<p>During the configuration process, <code>configure' sets the installation
+variables,</code>prefix' and <code>exec_prefix'.  These are then used to form other
+variables such as</code>bindir' and <code>sysconfdir'.  To change any of these or 
+other standard GNU install variables dynamically, issue the</code>make' command 
+with variable expressions as arguments, eg. `make prefix=/usr/local/packages'</p>
+
+<p>N.B. If prefix=/usr (either statically or dynamically), then sysconfdir=/etc
+instead of the usual $(prefix)/etc.  To force sysconfdir to be /usr/etc, set
+it on the make command line.</p>
+
+<h1>
+<a name="default-preprocessors" class="anchor" href="#default-preprocessors"><span class="octicon octicon-link"></span></a>Default preprocessors</h1>
+
+<p>man-db uses a manual page directed preprocessor system, that is, each manual
+page may request preprocessing by a selection of preprocessors.  Some
+systems' manual pages do not come with this information built in.  In such
+circumstances, it is advisable to set a default list of preprocessors that
+each manual page should be passed through, so that those requiring special
+processing are readable.  To achieve this, set DEFAULT_MANROFFSEQ (found in
+include/manconfig.h) to the appropriate preprocessor string, after running
+configure, but prior to compilation.  This is not necessary for the
+following systems whose default preprocessing requirements are known.</p>
+
+<p>Known not to require DEFAULT_MANROFFSEQ:
+    Linux, SunOS
+  Known to require #define DEFAULT_MANROFFSEQ "t":
+    Ultrix
+  Known to require #define DEFAULT_MANROFFSEQ "te":
+    HP-UX, OSF/1</p>
+
+<p>If unsure of the default preprocessors required by a system, the standard
+system's man(1) manual page may provide an answer. </p>
+
+<h1>
+<a name="contacting-the-maintainer" class="anchor" href="#contacting-the-maintainer"><span class="octicon octicon-link"></span></a>Contacting the maintainer</h1>
+
+<p>The current maintainer of man-db is Colin Watson <a href="mailto:cjwatson@debian.org">cjwatson@debian.org</a>.
+Please feel free to contact me with any queries or problems you may have. If
+you are using the Debian GNU/Linux or GNU/Hurd system, I welcome bug reports
+against the man-db package by way of the Debian bug tracking system
+(<a href="http://bugs.debian.org/">http://bugs.debian.org/</a>).</p>
+        </section>
+
+        <footer>
+          Man-db is maintained by <a href="https://github.com/Distrotech">Distrotech</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
